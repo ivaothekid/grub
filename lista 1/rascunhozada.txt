@@ -1,0 +1,50 @@
+1 e 5 = 2+3+4 1
+2 e 5 = 1+3+4 2
+3 e 5 = 1+2+4 3
+4 e 5 = 1+2+3 4
+
+1 e 4 = 2+3+5 5
+2 e 4 = 1+3+5 6
+3 e 4 = 1+2+5 7
+
+1 e 3 = 2+4+5 8
+2 e 3 = 1+4+5 9
+
+1 e 2 = 3+4+5 10
+
+H P F D
+
+4 14 7 -1 (P>F F>H P>H) S
+4 14 7 1
+
+15 9 8 -1 (H>P H>F P>F)
+15 9 8 1
+
+0 14 15 -1 (H<P H<F P<F)
+
+p>f && f>h
+p>h && h>f
+
+h>p && p>f
+h>f && f>p
+
+f>h && h>p
+f>p && p>h
+
+lights out
+
+- no começo, todas as lampadas tao ligadas.
+- caso uma lampada esteja apagada, ela vai apagar junto todas as adjacentes, ou seja, ela vai apagar em formato de L
+
+#include <stdio.h>
+
+int main(){
+    int a,b,c,d,e,f,g,h,i;
+    scanf("%d%d%d%d%d%d%d%d%d",&a,&b,&c,&d,&e,&f,&g,&h,&i);
+    
+    printf((a+b+d)%2==0 ? "1":"0"); printf((a+b+c+e)%2==0 ? "1":"0"); printf((b+c+f)%2==0 ? "1":"0");
+    printf((g+a+d+e)%2==0 ? "\n1":"\n0"); printf((b+d+e+f+h)%2==0 ? "1":"0"); printf((i+f+c+e)%2==0 ? "1":"0");
+    printf((g+d+h)%2==0 ? "\n1":"\n0"); printf((g+h+i+e)%2==0 ? "1":"0"); printf((i+h+f)%2==0 ? "1":"0");
+    
+    return 0;
+}
